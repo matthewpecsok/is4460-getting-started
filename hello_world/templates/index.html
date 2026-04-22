@@ -7,27 +7,193 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="GitHub Codespaces ♥️ Django">
-    <meta name="author" content="GitHub Codespaces">
-    <meta name="generator" content="GitHub Codespaces">
-    <meta name="theme-color" content="#000000">
-    <title>{% block title %}{{ title }} | GitHub Codespaces ♥️ Django{% endblock %}</title>
-    
+    <meta name="description" content="Welcome page for University of Utah IS4460: Web Application Development students">
+    <meta name="author" content="Matt Pecsok">
+    <meta name="theme-color" content="#cc0000">
+    <title>{% block title %}IS4460 | University of Utah{% endblock %}</title>
+
     <link rel="stylesheet" href="{% static 'main.css' %}">
+    <style>
+        :root {
+            --uofu-red: #cc0000;
+            --uofu-charcoal: #232323;
+            --ink: #1f2937;
+            --surface: #ffffff;
+            --surface-soft: #f8fafc;
+            --border: #e5e7eb;
+            --text-muted: #475569;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 20% 10%, rgba(204, 0, 0, 0.08), transparent 45%),
+                radial-gradient(circle at 90% 90%, rgba(35, 35, 35, 0.1), transparent 35%),
+                linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+        }
+
+        .welcome-page {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .welcome-card {
+            width: min(920px, 100%);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+            overflow: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--uofu-red), #9a0000);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .uofu-logo {
+            width: 58px;
+            height: 58px;
+            border-radius: 8px;
+            background: #ffffff;
+            padding: 0.2rem;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-text {
+            margin: 0;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            line-height: 1.15;
+            letter-spacing: 0.01em;
+        }
+
+        .hero p {
+            margin: 0.9rem 0 0;
+            font-size: 1.05rem;
+            max-width: 58ch;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .content {
+            padding: 2rem;
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .intro {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .topics {
+            display: grid;
+            gap: 0.85rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .topic {
+            background: var(--surface-soft);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .topic h2 {
+            margin: 0 0 0.55rem;
+            font-size: 1rem;
+            color: var(--uofu-charcoal);
+        }
+
+        .topic p {
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .footer-note {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 2rem 1.25rem;
+            }
+
+            .content {
+                padding: 1.25rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="App">
-        <header class="App-header">
-            <img src="{% static 'Octocat.png' %}" class="App-logo" alt="logo" />
-            <p>
-                GitHub Codespaces <span class="heart">♥️</span> Django
-            </p>
-            <p class="small">
-                Edit <code>hello_world/templates/index.html</code> and see changes live!
-            </p>
-        </header>
-    </div>
+    <main class="welcome-page">
+        <section class="welcome-card" aria-label="Welcome to IS4460">
+            <header class="hero">
+                <div class="brand-row">
+                    <img src="{% static 'uofu-logo.svg' %}" class="uofu-logo" alt="University of Utah logo" />
+                    <p class="brand-text">University of Utah</p>
+                </div>
+                <h1>Welcome to IS4460: Web Application Development</h1>
+                <p>University of Utah students, this space is your launchpad for building practical web applications with modern tools, clean architecture, and collaborative workflows.</p>
+                <p><strong>Instructor:</strong> Matt Pecsok</p>
+            </header>
+
+            <div class="content">
+                <p class="intro">
+                    In IS4460, you will design, implement, and refine data-driven web apps while strengthening your skills in backend logic, frontend usability, and professional development practices.
+                </p>
+
+                <div class="topics">
+                    <article class="topic">
+                        <h2>Build Full-Stack Features</h2>
+                        <p>Create views, templates, and routes that turn user requirements into reliable working software.</p>
+                    </article>
+                    <article class="topic">
+                        <h2>Work with Data</h2>
+                        <p>Model information carefully, connect to databases, and expose meaningful functionality through your app.</p>
+                    </article>
+                    <article class="topic">
+                        <h2>Ship as a Team</h2>
+                        <p>Practice version control, testing, and iterative delivery to mirror real-world development environments.</p>
+                    </article>
+                </div>
+
+                <p class="footer-note">
+                    We are excited to have you in the course. Bring curiosity, ask questions often, and be ready to learn by building.
+                </p>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

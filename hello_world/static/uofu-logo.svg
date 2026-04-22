@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">University of Utah logo mark</title>
+  <desc id="desc">Red block U on white background</desc>
+  <rect width="240" height="240" fill="#ffffff"/>
+  <path d="M36 20h48v142c0 22 14 36 36 36s36-14 36-36V20h48v146c0 23-8 42-24 57-16 15-36 23-60 23s-44-8-60-23c-16-15-24-34-24-57V20z" fill="#cc0000"/>
+</svg>
