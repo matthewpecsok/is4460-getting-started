@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #1f2937;
+        }
+        .page {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.25rem 4rem;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+            padding: 2rem;
+        }
+        h1 { margin-top: 0; color: #0f172a; }
+        p { line-height: 1.7; }
+        a {
+            color: #0072cc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <article class="card">
+            <h1>A Tea Ceremony Excursion in Kyoto, Japan</h1>
+            <p>One of my favorite experiences in Japan was a trip to Kyoto, where I had the chance to take part in a traditional tea ceremony. The setting was peaceful, and the whole experience felt calm and meaningful.</p>
+            <p>There was something special about the slow pace of the ceremony. Every movement felt deliberate, and the atmosphere made the moment feel timeless.</p>
+            <p>It was a beautiful reminder of how much joy can come from simple, thoughtful traditions. The experience made Kyoto feel even more memorable and serene.</p>
+            <p><a href="{% url 'home' %}">Back to home</a></p>
+        </article>
+    </main>
+</body>
+</html>

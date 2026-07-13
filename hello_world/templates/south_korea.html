@@ -1,0 +1,48 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #1f2937;
+        }
+        .page {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.25rem 4rem;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+            padding: 2rem;
+        }
+        h1 { margin-top: 0; color: #0f172a; }
+        p { line-height: 1.7; }
+        a {
+            color: #0072cc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <article class="card">
+            <h1>Food at Triple Street in South Korea</h1>
+            <p>One of the most memorable parts of my recent trip to South Korea was spending time at Triple Street. The energy there was wonderful, and every stop felt like a little celebration of flavor.</p>
+            <p>I loved how the whole area felt welcoming and vibrant. From the first bite to the last, the food made the experience feel rich, exciting, and full of personality.</p>
+            <p>What stood out most was the variety. I was able to try dishes that were comforting, creative, and beautifully presented, and each one made me appreciate the care behind Korean food culture even more.</p>
+            <p><a href="{% url 'home' %}">Back to home</a></p>
+        </article>
+    </main>
+</body>
+</html>
